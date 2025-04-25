@@ -14,7 +14,7 @@
            DISPLAY "Text: " WITH NO ADVANCING
            ACCEPT TextLine
            MOVE FUNCTION UPPER-CASE(TextLine) TO TextLine
-           DISPLAY "Enter encryption name:" WITH NO ADVANCING
+           DISPLAY "Enter encryption name: " WITH NO ADVANCING
            ACCEPT Operation
            CALL Operation USING BY CONTENT TextLine
                ON EXCEPTION     DISPLAY Operation " is invalid op"
@@ -35,8 +35,8 @@
        PROCEDURE DIVISION USING TextIn.
            INSPECT TextIn CONVERTING
                Alpha TO Beta
-                   AFTER  INITIAL "@>"
-                   BEFORE INITIAL "<@"
+      *            AFTER  INITIAL "@>"
+      *            BEFORE INITIAL "<@"
            DISPLAY TextIn
            EXIT PROGRAM.
        END PROGRAM Flip.
